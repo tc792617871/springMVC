@@ -25,10 +25,8 @@
 	</settings>
 
 	<plugins>
-		<plugin
-			interceptor="com.toncho.mybatis.interceptor.MybatisSqlLogPlugin" />
-<!-- 		<plugin -->
-<!-- 			interceptor="com.toncho.mybatis.interceptor.MySqlPaginationPlugin" /> -->
+		<plugin interceptor="com.toncho.mybatis.interceptor.MybatisSqlLogPlugin" />
+		<plugin interceptor="com.toncho.mybatis.interceptor.MySqlPaginationPlugin" />
 	</plugins>
-	
+
 </configuration>

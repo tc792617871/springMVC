@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.toncho.dao.Criteria;
 import com.toncho.dao.entity.TUser;
 import com.toncho.dao.mapper.TUserMapper;
 import com.toncho.service.api.IUserService;
@@ -19,6 +20,11 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public List<TUser> findAllUsers() {
 		return userMapper.queryAllUsers();
+	}
+	
+	@Override
+	public List<TUser> findUsers(Criteria criteria){
+		return userMapper.selectByExample(criteria);
 	}
 
 }

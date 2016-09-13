@@ -2,6 +2,7 @@ package com.toncho.dao.mapper;
 
 import java.util.List;
 
+import com.toncho.dao.Criteria;
 import com.toncho.dao.entity.TUser;
 
 /**
@@ -11,5 +12,7 @@ import com.toncho.dao.entity.TUser;
 public interface TUserMapper {
 
 	List<TUser> queryAllUsers();
+	
+	List<TUser> selectByExample(Criteria criteria);
 
 }
