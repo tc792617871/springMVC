@@ -12,7 +12,7 @@ import com.toncho.dao.entity.TUser;
 public interface TUserMapper {
 
 	List<TUser> queryAllUsers();
-	
+
 	List<TUser> selectByExample(Criteria criteria);
 
 }

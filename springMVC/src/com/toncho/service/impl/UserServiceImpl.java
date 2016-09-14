@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.toncho.dao.Criteria;
@@ -18,6 +19,7 @@ public class UserServiceImpl implements IUserService {
 	private TUserMapper userMapper;
 
 	@Override
+	@Cacheable(value="userCache")
 	public List<TUser> findAllUsers() {
 		return userMapper.queryAllUsers();
 	}

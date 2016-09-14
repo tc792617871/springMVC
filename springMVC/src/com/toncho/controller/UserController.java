@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.toncho.dao.Criteria;
-import com.toncho.dao.Criteria.Condition;
 import com.toncho.dao.Page;
 import com.toncho.dao.entity.TUser;
 import com.toncho.service.api.IUserService;

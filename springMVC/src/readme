@@ -3,16 +3,10 @@
 1、本系统使用spring4.1.5，集成spring时需要提供以下jar支持 common-logging-1.2.jar   ------ success
 2、前端需要jstl标签库支持，如下：jstl-1.2.jar, standard-1.1.2.jar        ------ success
 3、集成定时器时加入了 aopalliance-1.0.jar           ------ success 
-
 4、集成mybatis需要 加入mybatis3.2.8, mysql-connector-java-5.1.34.jar,mybatis-spring-1.2.2.jar, 连接池commons-dpcp-1.4.jar、commons-pool-1.6.jar
-
 5、引入org.apache.commons.lang3-commons.lang-3.4.jar
-6、引入com\alibaba\fastjson\1.2.8-fastjson-1.2.8.jar
-
+6、引入com.alibaba.fastjson/1.2.8-fastjson-1.2.8.jar
 7、 集成log4j 直接加入log4j-1.2.14.jar
-
-8、 mybatis集成执行语句打印插件 ---- 加入配置，编写mybatis拦截器
-
-9、 mybatis分页拦截器 加入
-
-10、
+8、 mybatis集成执行语句打印插件 ----加入配置，编写mybatis拦截器
+9、 mybatis分页拦截器加入
+10、集成ehcache2.10,加入ehcache-2.10.jar和需要的slf4j-api-1.7.7.jar
