@@ -51,5 +51,7 @@ public class UserController extends AbstractController {
 		model.addAttribute("users", users);
 		return "user/listAllUsers";
 	}
+	
+	
 
 }

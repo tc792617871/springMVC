@@ -14,5 +14,9 @@ public interface TUserMapper {
 	List<TUser> queryAllUsers();
 
 	List<TUser> selectByExample(Criteria criteria);
+	
+	int deleteByPrimaryKey(Long userID);
+	
+	int insertSelective(TUser user);
 
 }
