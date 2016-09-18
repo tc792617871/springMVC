@@ -10,3 +10,4 @@
 8、 mybatis集成执行语句打印插件 ----加入配置，编写mybatis拦截器
 9、 mybatis分页拦截器加入
 10、集成ehcache2.10,加入ehcache-2.10.jar和需要的slf4j-api-1.7.7.jar
+11、集成事务, 开启事务注解驱动 <tx:annotation-driven transaction-manager="transactionManager" />
