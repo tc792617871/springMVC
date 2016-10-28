@@ -36,7 +36,7 @@ public class UserController extends AbstractController {
 		List<TUser> users = new ArrayList<>();
 		users = userService.findAllUsers();
 		model.addAttribute("users", users);
-		return "user/listAllUsers";
+		return "user/userList";
 	}
 	
 	/**

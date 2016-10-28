@@ -35,13 +35,31 @@
 	<!-- class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" 
 		/> -->
 		
-	<!-- ViewResolver -->
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass"
-			value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/WEB-INF/jsp/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
+	<!-- ViewResolver jsp resolver-->
+<!-- 	<bean -->
+<!-- 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!-- 		<property name="viewClass" -->
+<!-- 			value="org.springframework.web.servlet.view.JstlView" /> -->
+<!-- 		<property name="prefix" value="/WEB-INF/jsp/" /> -->
+<!-- 		<property name="suffix" value=".jsp" /> -->
+<!-- 	</bean> -->
+
+	<!-- Thymeleaf View Resolver - implementation of Spring's ViewResolver interface -->  
+    <bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">  
+        <property name="templateEngine" ref="templateEngine" />  
+        <property name="characterEncoding" value="UTF-8" />  
+    </bean>  
+      
+    <!-- Thymeleaf Template Engine (Spring4-specific version) -->  
+    <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">  
+        <property name="templateResolvers" ref="templateResolver"/>  
+    </bean>  
+      
+    <!-- Thymeleaf Template Resolver -->  
+     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">  
+        <property name="prefix" value="/WEB-INF/pages/" />  
+        <property name="templateMode" value="HTML" />  
+        <property name="suffix" value=".html"/>
+    </bean>
 
 </beans>

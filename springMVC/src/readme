@@ -1,5 +1,5 @@
 搭建日志------------------------
-
+jdk1.8
 1、本系统使用spring4.1.5，集成spring时需要提供以下jar支持 common-logging-1.2.jar   ------ success
 2、前端需要jstl标签库支持，如下：jstl-1.2.jar, standard-1.1.2.jar        ------ success
 3、集成定时器时加入了 aopalliance-1.0.jar           ------ success 
@@ -11,3 +11,4 @@
 9、 mybatis分页拦截器加入
 10、集成ehcache2.10,加入ehcache-2.10.jar和需要的slf4j-api-1.7.7.jar
 11、集成事务, 开启事务注解驱动 <tx:annotation-driven transaction-manager="transactionManager" />
+12、spring4.1.5 集成 thymeleaf3.0.2
