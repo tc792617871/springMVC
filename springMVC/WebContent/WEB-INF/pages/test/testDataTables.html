@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<link rel="stylesheet" th:href="@{/resources/css/jquery.dataTables.css}" />
+<title>用户列表界面</title>
+</head>
+<body>
+	<table id="table_id_example" class="display">
+		<thead>
+			<tr>
+				<th>Column 1</th>
+				<th>Column 2</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Row 1 Data 1</td>
+				<td>Row 1 Data 2</td>
+			</tr>
+			<tr>
+				<td>Row 2 Data 1</td>
+				<td>Row 2 Data 2</td>
+			</tr>
+		</tbody>
+	</table>
+	<script th:src="@{/resources/js/jquery.js}"></script>
+	<script th:src="@{/resources/js/jquery.dataTables.js}"></script>
+	<script th:inline="javascript">
+        /*<![CDATA[*/
+             $(document).ready( function () {
+    			$('#table_id_example').DataTable();
+			 });
+        /*]]>*/
+    </script>
+</body>
+</html>
