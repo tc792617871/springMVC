@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author tangchao
  *
  */
-@Controller("UserController")
-@RequestMapping("/user")
+@Controller("TestController")
+@RequestMapping("/test")
 public class TestController {
 
 	/**
