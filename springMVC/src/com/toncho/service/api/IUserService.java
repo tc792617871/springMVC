@@ -8,6 +8,10 @@ import com.toncho.dao.entity.TUser;
 public interface IUserService {
 
 	List<TUser> findAllUsers();
-	
+
 	List<TUser> findUsers(Criteria criteria);
+
+	Boolean insertUser(TUser user);
+
+	TUser findByID(Long id);
 }

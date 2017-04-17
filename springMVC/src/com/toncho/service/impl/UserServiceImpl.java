@@ -20,22 +20,25 @@ public class UserServiceImpl implements IUserService {
 	private TUserMapper userMapper;
 
 	@Override
-	@Cacheable(value="userCache")
+	@Cacheable(value = "userCache")
 	public List<TUser> findAllUsers() {
 		return userMapper.queryAllUsers();
 	}
-	
+
+	@Override
+	public List<TUser> findUsers(Criteria criteria) {
+		return userMapper.selectByExample(criteria);
+	}
+
 	@Override
 	@Transactional
-	public List<TUser> findUsers(Criteria criteria){
-		TUser user = new TUser();
-		user.setUserid(7L);
-		user.setUsername("ttt");
-		user.setPassword("pas");
-		user.setAge(111);
-		userMapper.deleteByPrimaryKey(5L);
-		userMapper.insertSelective(user);
-		return userMapper.selectByExample(criteria);
+	public Boolean insertUser(TUser user) {
+		return userMapper.insertSelective(user) > 0 ? true : false;
+	}
+
+	@Override
+	public TUser findByID(Long id) {
+		return userMapper.selectByPrimaryKey(id);
 	}
 
 }

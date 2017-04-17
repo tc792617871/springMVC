@@ -18,5 +18,7 @@ public interface TUserMapper {
 	int deleteByPrimaryKey(Long userID);
 	
 	int insertSelective(TUser user);
+	
+	TUser selectByPrimaryKey(Long id);
 
 }

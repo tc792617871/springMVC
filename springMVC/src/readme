@@ -13,3 +13,7 @@ jdk1.8
 11、集成事务, 开启事务注解驱动 <tx:annotation-driven transaction-manager="transactionManager" />
 12、spring4.1.5 集成 thymeleaf3.0.2
 13、项目中集成了 使用jdbc 采集数据的采集器 位于com.toncho.collector
+14、新增spring-rest接口功能 
+springMVC浏览器接受json报406错误的解决方法:新增三个jackson-core-2.6.4.jar、jackson-annotations-2.6.4.jar、jackson-databind-2.6.4.jar包
+测试url ： http://localhost:8080/springMVC/rest/api/user/getUserByID.do?id=7
+		 http://localhost:8080/springMVC/rest/api/user/v2/getUserByID/7

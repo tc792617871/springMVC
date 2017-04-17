@@ -1,4 +1,4 @@
-package com.toncho.controller;
+package com.toncho.controller.console;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
