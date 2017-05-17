@@ -17,3 +17,9 @@ jdk1.8
 springMVC浏览器接受json报406错误的解决方法:新增三个jackson-core-2.6.4.jar、jackson-annotations-2.6.4.jar、jackson-databind-2.6.4.jar包
 测试url ： http://localhost:8080/springMVC/rest/api/user/getUserByID.do?id=7
 		 http://localhost:8080/springMVC/rest/api/user/v2/getUserByID/7
+整合datatable和bootstrap
+整合select2
+整合validate remote验证是否存在！
+适配validate和select2
+开发后台登陆界面 集成权限shiro
+
