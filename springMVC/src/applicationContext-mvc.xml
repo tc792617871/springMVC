@@ -58,7 +58,7 @@
     <!-- Thymeleaf Template Resolver -->  
      <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">  
         <property name="prefix" value="/WEB-INF/pages/" />  
-        <property name="templateMode" value="HTML" />  
+        <property name="templateMode" value="HTML5" />  
         <property name="suffix" value=".html"/>
     </bean>
 

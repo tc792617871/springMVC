@@ -1,0 +1,78 @@
+<input type="hidden" id="baseURL" th:value="@{/}" />
+<script th:src="@{/resources/js/jquery.js}"></script>
+<script th:src="@{/resources/datatables/jquery.dataTables.js}"></script>
+<script th:src="@{/resources/datatables/dataTables.bootstrap.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+/* <![CDATA[ */
+	var base_url = $('#baseURL').val();
+	$.extend($.fn.DataTable.defaults, {
+		"bAutoWidth" : true,//自动列宽
+		"bSort" : false,//排序功能
+		"bProcessing" : true, //加载数据时显示正在加载信息
+		"bServerSide" : true, //指定从服务器端获取数据
+		"bFilter" : false, //不使用过滤功能
+		"bLengthChange" : true, //用户不可改变每页显示数量
+		"aLengthMenu" : [10, 40, 60, 80],
+		"iDisplayLength" : 10, //每页显示10条数据
+// 		"fnServerParams" : function(aoData) {// 加载查询数据，列表查询不进行条件判断
+// 	        $("#"+$(this).attr("id")+"-query  input,"+"#"+$(this).attr("id")+"-query select").each(function(idx){
+// 	              var conValue = $(this).val();
+// 	              if(isNotEmpty(conValue)){
+// 	                  aoData.push(getPramObj($(this).attr("name"),conValue));
+// 	              }
+// 	        });
+// 	    },
+		"fnServerData" : function(sSource, aoData, fnCallback) {// 向后台进行请求数据
+			$.ajax({
+				"type" : "post",
+				"url" : sSource,
+				"dataType" : "json",
+				"data" : {
+					aoData : JSON.stringify(aoData)
+				},
+				"success" : function(resp) {
+					if(resp.result){
+						fnCallback(resp.data);
+					}
+				}
+			});
+		},
+		"fnDrawCallback": function( oSettings ) {
+			var that =this;
+            this.$('td:first-child').each( function (i) {
+            	that.fnUpdate(oSettings._iDisplayStart+i+1, this.parentNode, 0, false, false);
+            });
+		},
+// 		"sPaginationType" : "bootstrap", //翻页界面类型
+		"headerClickable" : false,
+		"sortable" : false,
+		"bInfo": false,
+		"bLengthChange":false,
+		"oLanguage" : {
+			"sProcessing" : "处理中...",
+			"sLengthMenu" : "显示 _MENU_ 项结果",
+			"sZeroRecords" : "没有匹配结果",
+			"sInfo" : "共 _TOTAL_ 条",
+			"sInfoEmpty" : "共 0 条",
+			"sInfoFiltered" : "(由 _MAX_ 项结果过滤)",
+			"sInfoPostFix" : "",
+			"sSearch" : "搜索:",
+			"sUrl" : "",
+			"sEmptyTable" : "表中数据为空",
+			"sLoadingRecords" : "载入中...",
+			"sInfoThousands" : ",",
+			"oPaginate" : {
+				"sFirst" : "&laquo;",
+				"sPrevious" : "&lsaquo;",
+				"sNext" : "&rsaquo;",
+				"sLast" : "&raquo;"
+			},
+			"oAria" : {
+				"sSortAscending" : ": 以升序排列此列",
+				"sSortDescending" : ": 以降序排列此列"
+			}
+		}
+	});
+	
+	/* ]]> */
+</script>
